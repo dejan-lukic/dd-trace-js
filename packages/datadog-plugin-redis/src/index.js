@@ -28,6 +28,7 @@ class RedisPlugin extends CachePlugin {
       type: this._spanType,
       meta: {
         'db.type': this._spanType,
+        'db.name': connectionOptions.host,
         [`${this._spanType}.raw_command`]: formatCommand(normalizedCommand, args),
         'out.host': connectionOptions.host,
         [CLIENT_PORT_KEY]: connectionOptions.port
